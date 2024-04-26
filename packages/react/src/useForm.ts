@@ -19,13 +19,13 @@ export interface InertiaFormProps<TForm extends FormDataType> {
   recentlySuccessful: boolean
   setData: setDataByObject<TForm> & setDataByMethod<TForm> & setDataByKeyValuePair<TForm>
   transform: (callback: (data: TForm) => TForm) => void
-  setDefaults(): void
-  setDefaults(field: keyof TForm, value: FormDataConvertible): void
-  setDefaults(fields: Partial<TForm>): void
+  setDefaults: () => void
+  setDefaults: (field: keyof TForm, value: FormDataConvertible) => void
+  setDefaults: (fields: Partial<TForm>) => void
   reset: (...fields: (keyof TForm)[]) => void
   clearErrors: (...fields: (keyof TForm)[]) => void
-  setError(field: keyof TForm, value: string): void
-  setError(errors: Record<keyof TForm, string>): void
+  setError: (field: keyof TForm, value: string) => void
+  setError: (errors: Record<keyof TForm, string>) => void
   submit: (method: Method, url: string, options?: VisitOptions) => void
   get: (url: string, options?: VisitOptions) => void
   patch: (url: string, options?: VisitOptions) => void
